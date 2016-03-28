@@ -77,6 +77,12 @@ set cmdheight=1
 set laststatus=2
 " ステータス行に表示させる情報の指定
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+" 行を強調表示
+set cursorline
+autocmd ColorScheme * hi CursorLine   cterm=NONE ctermbg=Blue "ctermfg=white
+" 列を強調表示
+set cursorcolumn
+autocmd ColorScheme * hi CursorColumn cterm=NONE ctermbg=Blue "ctermfg=white
 " 暗い背景色に合わせた配色にする
 set background=dark
 colorscheme desert

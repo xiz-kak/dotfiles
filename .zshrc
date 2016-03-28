@@ -54,6 +54,8 @@ plugins=(git ruby osx bundler brew rails emoji-clock)
 # User configuration
 
 export PATH="/usr/bin:/bin:/usr/local/bin:/usr/sbin"
+export PATH=$HOME/.rbenv/bin:$PATH
+eval "$(rbenv init -)"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -67,6 +69,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -87,7 +90,7 @@ source $ZSH/oh-my-zsh.sh
 #
 ## C-r -> Display command history list
 function peco-history-selection() {
-  BUFFER=`fc -ln | tail -r  | awk '!a[$0]++' | peco`
+  BUFFER=`fc -ln -100 | tail -r  | awk '!a[$0]++' | peco`
   CURSOR=$#BUFFER
   zle reset-prompt
 }
