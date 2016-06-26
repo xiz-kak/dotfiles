@@ -53,10 +53,14 @@ plugins=(git ruby osx bundler brew rails emoji-clock)
 
 # User configuration
 
-export PATH="/usr/bin:/bin:/usr/local/bin:/usr/sbin"
+export PATH="/usr/bin:/bin:/usr/local/bin:/usr/sbin:/sbin"
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 # export MANPATH="/usr/local/man:$MANPATH"
+#
+export PATH=$HOME/.pyenv/bin:$PATH
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -118,3 +122,17 @@ function peco-find() {
 }
 zle -N peco-find
 bindkey '^f' peco-find
+
+## Google search
+function google() {
+   local str opt
+   if [ $# != 0 ]; then
+       for i in $*; do
+           str="$str+$i"
+       done
+       str=`echo $str | sed 's/^\+//'`
+       opt='search?num=50&hl=ja&lr=lang_ja'
+       opt="${opt}&q=${str}"
+    fi
+    w3m http://www.google.co.jp/$opt
+}
