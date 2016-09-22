@@ -53,7 +53,8 @@ plugins=(git ruby osx bundler brew rails emoji-clock)
 
 # User configuration
 
-export PATH="/usr/bin:/bin:/usr/local/bin:/usr/sbin:/sbin"
+# export PATH="/usr/bin:/bin:/usr/local/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 # export MANPATH="/usr/local/man:$MANPATH"
