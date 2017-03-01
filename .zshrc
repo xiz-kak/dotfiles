@@ -65,6 +65,8 @@ eval "$(pyenv virtualenv-init -)"
 
 source $ZSH/oh-my-zsh.sh
 
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -90,6 +92,8 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias dcr='docker-compose run'
+alias dcu='docker-compose up'
 #
 # Functions
 #
