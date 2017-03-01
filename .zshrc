@@ -94,6 +94,7 @@ export EDITOR='vim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias dcr='docker-compose run'
 alias dcu='docker-compose up'
+alias dcs='docker-compose stop'
 #
 # Functions
 #
