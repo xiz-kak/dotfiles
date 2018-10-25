@@ -4,10 +4,10 @@ if &compatible
 endif
 
 " Required:
-set runtimepath^=/Users/kakimotoshizuka/.vim/bundle/neobundle.vim/
+set runtimepath^=~/.vim/bundle/neobundle.vim/
 
 " Required:
-call neobundle#begin(expand('/Users/kakimotoshizuka/.vim/bundle'))
+call neobundle#begin(expand('~/.vim/bundle'))
 
 " Let NeoBundle manage NeoBundle
 " Required:
@@ -92,6 +92,9 @@ set hlsearch
 set incsearch
 " カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]]
+
+set ignorecase
+set smartcase
 
 if has("syntax")
   syntax on

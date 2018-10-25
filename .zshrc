@@ -1,11 +1,11 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/kakimotoshizuka/.oh-my-zsh
+# export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="philips"
+# ZSH_THEME="philips"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -53,6 +53,27 @@ plugins=(git ruby osx bundler brew rails emoji-clock)
 
 # User configuration
 
+autoload -U compinit
+compinit
+
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+precmd () { vcs_info }
+
+PROMPT='%F{blue}%n@%m%f:%c %# '
+RPROMPT='${vcs_info_msg_0_}[%D %*]'
+
+# Enable ctrl+a
+bindkey -e
+
+# Ignore case for auto completion
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
 # export PATH="/usr/bin:/bin:/usr/local/bin:/usr/sbin:/sbin"
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH=$HOME/.rbenv/bin:$PATH
@@ -63,7 +84,7 @@ export PATH=$HOME/.pyenv/bin:$PATH
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
