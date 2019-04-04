@@ -65,8 +65,11 @@ zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
 
-PROMPT='%F{blue}%n@%m%f:%c %# '
-RPROMPT='${vcs_info_msg_0_}[%D %*]'
+PROMPT='%F{blue}%n%f:%c${vcs_info_msg_0_} %# '
+RPROMPT='[%D %*]'
+
+# No nomatch
+setopt nonomatch
 
 # Enable ctrl+a
 bindkey -e
@@ -116,6 +119,9 @@ export EDITOR='vim'
 alias dcr='docker-compose run'
 alias dcu='docker-compose up'
 alias dcs='docker-compose stop'
+
+# Local zsh config
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
 #
 # Functions
 #
