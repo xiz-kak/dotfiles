@@ -43,6 +43,7 @@ filetype plugin indent on
 NeoBundleCheck
 "END NeoBundle Scripts-----------------------------
 
+set rtp+=~/tabnine-vim
 " file encode
 set encoding=utf-8
 set fileencodings=utf-8
@@ -102,6 +103,7 @@ endif
 
 "NERDTree設定-----------------------------
 let NERDTreeWinSize=26
+noremap <C-N> :NERDTreeToggle<CR>
 "END NERDTree設定-------------------------
 
 "全角スペースをハイライト表示-------------
@@ -125,7 +127,7 @@ let g:unite_enable_start_insert=0
 " バッファ一覧
 noremap <C-P> :Unite buffer<CR>
 " ファイル一覧
-noremap <C-N> :Unite -buffer-name=file file<CR>
+" noremap <C-N> :Unite -buffer-name=file file<CR>
 " 最近使ったファイルの一覧
 noremap <C-Z> :Unite file_mru<CR>
 " sourcesを「今開いているファイルのディレクトリ」とする
