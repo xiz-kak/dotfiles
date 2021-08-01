@@ -1,4 +1,4 @@
-"NeoBundle Scripts-----------------------------
+" NeoBundle Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
 endif
@@ -20,8 +20,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " NeoBundle 'flazz/vim-colorschemes'
 " ファイルオープンを便利に
 NeoBundle 'Shougo/unite.vim'
-" Unite.vimで最近使ったファイルを表示できるようにする
-NeoBundle 'Shougo/neomru.vim'
+"" Unite.vimで最近使ったファイルを表示できるようにする
+"NeoBundle 'Shougo/neomru.vim'
 " ファイルをtree表示してくれる
 NeoBundle 'scrooloose/nerdtree'
 " Ruby向けにendを自動挿入してくれる

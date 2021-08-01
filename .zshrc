@@ -65,8 +65,10 @@ zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
 
-PROMPT='%F{blue}%n@%m%f:%c %# '
-RPROMPT='${vcs_info_msg_0_}[%D %*]'
+PROMPT='%F{blue}%n@%m%f:%c${vcs_info_msg_0_} %# '
+RPROMPT='[%D %*]'
+
+setopt nonomatch
 
 # Enable ctrl+a
 bindkey -e
@@ -80,13 +82,11 @@ export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 # export MANPATH="/usr/local/man:$MANPATH"
 #
-export PATH=$HOME/.pyenv/bin:$PATH
+export PATH=$HOME/.pyenv/shims:$PATH
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # source $ZSH/oh-my-zsh.sh
-
-export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -113,6 +113,7 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias dcb='docker-compose build'
 alias dcr='docker-compose run'
 alias dcu='docker-compose up'
 alias dcs='docker-compose stop'
@@ -163,3 +164,8 @@ function google() {
     fi
     w3m http://www.google.co.jp/$opt
 }
+
+eval "$(nodenv init -)"
+
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
